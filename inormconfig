@@ -1,0 +1,24 @@
+module.exports =  {
+    "type": process.env.DB_TYPE || "mssql",
+    "host": process.env.DB_HOST || "localhost",
+    "port": process.env.DB_PORT || 1433,
+    "username": process.env.DB_USERNAME || "Admin",
+    "password": process.env.DB_PASSWORD || "colon007marcH",
+    "database": process.env.DB_DATABASE || "Koifish",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+        "src/entity/**/*.ts"
+    ],
+    "migrations": [
+        "src/migration/**/*.ts"
+    ],
+    "subscribers": [
+        "src/subscriber/**/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+    }
+};
